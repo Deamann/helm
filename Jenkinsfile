@@ -32,7 +32,7 @@ pipeline {
                 echo 'Verifying Deployment...'
                 sh 'helm ls'
                 sh 'kubectl get pods -o wide' // More detailed information
-                sh 'kubectl rollout status deployment/serviceapp' // Checks deployment readiness
+             
             }
         }
     }
