@@ -14,7 +14,7 @@ pipeline {
         stage('Lint Helm Chart') {
             steps {
                 echo 'Linting Helm Chart...'
-                sh 'helm lint ./helm --strict' // Strict validation for better chart quality
+                sh 'helm lint ./helm/serviceapp --strict' // Strict validation for better chart quality
             }
         }
 
