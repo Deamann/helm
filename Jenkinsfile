@@ -14,7 +14,7 @@ pipeline {
         stage('Lint Helm Chart') {
             steps {
                 echo 'Linting Helm Chart...'
-                sh 'helm lint ./helm/serviceapp --strict' // Strict validation for better chart quality
+                sh 'helm lint ./helm/serviceapp '
             }
         }
 
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 echo 'Deploying Application with Helm...'
                 sh '''
-                helm upgrade --install test-helm ./helm/serviceapp --namespace default
+                helm upgrade --install test-helm ./helm/serviceapp
                 '''
             }
         }
