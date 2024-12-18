@@ -22,7 +22,7 @@ pipeline {
             steps {
                 echo 'Deploying Application with Helm...'
                 sh '''
-                helm upgrade --install test-helm ./helm --namespace default
+                helm upgrade --install test-helm ./helm/serviceapp --namespace default
                 '''
             }
         }
