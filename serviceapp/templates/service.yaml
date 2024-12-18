@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: projects-service
+  labels:
+    app: serviceapp-helm
+spec:
+  selector:
+    app: serviceapp-helm
+  ports:
+  - protocol: TCP
+    port: 3000          # Service port
+    targetPort: 3000  # Container's exposed port
+  type: NodePort  # Can be ClusterIP, NodePort, or LoadBalancer based on your use case
+

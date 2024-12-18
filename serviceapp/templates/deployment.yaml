@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: projects-deployment
+  labels:
+    app: serviceapp-helm
+spec:
+  replicas: 3  # Number of pod replicas
+  selector:
+    matchLabels:
+      app: serviceapp-helm
+  template:
+    metadata:
+      labels:
+        app: serviceapp-helm
+    spec:
+      containers:
+      - name: serviceapp
+        image: deamann/projectz:v1
+        ports:
+        - containerPort: 3000
