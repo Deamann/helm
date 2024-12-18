@@ -22,7 +22,7 @@ pipeline {
             steps {
                 echo 'Deploying Application with Helm...'
                 sh '''
-                helm upgrade --install test-helm ./helm/serviceapp
+                helm upgrade --install serviceapp ./helm/serviceapp
                 '''
             }
         }
